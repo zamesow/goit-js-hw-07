@@ -1,14 +1,16 @@
-const headCategory = document.querySelector('#categories');
-console.log(headCategory);
+const categoriesAndItems = () => {
+  const categories = document.querySelectorAll('.item');
 
-// кол-во категорий
-const allSubCategories = headCategory.children;
-console.log(`В списке ${allSubCategories.length} категории`);
+  // кол-во категорий
+  console.log(`В списке ${categories.length} категории`);
 
-// название категорий
-const allTitlesEl = headCategory.querySelectorAll('h2').forEach(i => {
-  console.log(`Категория: ${i.textContent}`);
-  console.log(
-    `Количество элементов: ${headCategory.querySelector('ul').children.length}`,
-  );
-});
+  categories.forEach(i => {
+    // название категорий
+    console.log(`Категория: ${i.querySelector('h2').textContent}`);
+
+    // количество элементов в каждой категории
+    console.log(`Количество элементов: ${i.querySelectorAll('li').length}`);
+  });
+};
+
+categoriesAndItems();
