@@ -20,6 +20,4 @@ const itemIter = () => {
 
 itemIter();
 
-console.log(ingred);
-
 document.querySelector('#ingredients').replaceWith(ingred);
