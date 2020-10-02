@@ -31,5 +31,5 @@ const ingredEl = ingredients.map(i => {
   itemEl.textContent = i;
   return itemEl;
 });
-console.log(ingredEl);
+
 document.querySelector('#ingredients').append(...ingredEl);
