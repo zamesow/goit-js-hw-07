@@ -7,17 +7,29 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingred = document.createElement('ul');
-ingred.id = 'ingredients';
+// --------------------------------- Вариант 1
+
+/* const ingredEl = document.createElement('ul');
+ingredEl.id = 'ingredients';
 
 const itemIter = () => {
   ingredients.forEach(i => {
     const itemEl = document.createElement('li');
     itemEl.textContent = i;
-    ingred.appendChild(itemEl);
+    ingredEl.appendChild(itemEl);
   });
 };
 
 itemIter();
 
-document.querySelector('#ingredients').replaceWith(ingred);
+document.querySelector('#ingredients').replaceWith(ingredEl); */
+
+// --------------------------------- Вариант 2
+
+const ingredEl = ingredients.map(i => {
+  const itemEl = document.createElement('li');
+  itemEl.textContent = i;
+  return itemEl;
+});
+console.log(ingredEl);
+document.querySelector('#ingredients').append(...ingredEl);

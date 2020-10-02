@@ -85,5 +85,14 @@ imageEl.width = 128; // устанавливаем  атрибут width
 
 console.log('imageEl', imageEl);
 
-document.body.appendChild(imageEl);
+document.body.appendChild(imageEl); // вставляем imageEl в конец body
 // --------------------------------------------------------------------------
+
+const contEl = document.querySelector('.cont'); // ищем элемент с кл. .cont
+contEl.insertBefore(titleEl, contEl.firstElementChild); // вставляем titleEl перед первым элементом внутри contEl
+
+const heroEl = document.querySelector('.hero'); // ищем элемент с кл. .hero
+heroEl.append(titleEl, imageEl); // вставляет сколь угодно элементов в написанном порядке за один раз
+// --------------------------------------------------------------------------
+
+heroEl.append(...imageEl); // если бы был массив элементов, можно было бы их распушить в родительский элемент в HTML
