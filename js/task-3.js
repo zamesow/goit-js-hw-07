@@ -18,19 +18,13 @@ const images = [
 
 const galleryEl = document.querySelector('#gallery');
 
-const makeNewArrayEl = images => {
-  return images.map(i => {
-    const element = document.createElement('li');
-    const image = document.createElement('img');
-    image.src = i.url;
-    image.width = 240;
-    image.alt = i.alt;
-    element.append(image);
-    return element;
-  });
+const createGallery = array => {
+  galleryEl.classList.add('gallery');
+  const makeItem = ({ url, alt }) =>
+    `<li><img src='${url}' alt='${alt}' width='240'></li>`;
+
+  const strings = images.map(makeItem).join(' ');
+  galleryEl.insertAdjacentHTML('beforeend', strings);
 };
 
-const newArray = makeNewArrayEl(images);
-galleryEl.append(...newArray);
-
-galleryEl.classList.add('gallery');
+createGallery(images);
