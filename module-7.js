@@ -93,6 +93,28 @@ contEl.insertBefore(titleEl, contEl.firstElementChild); // вставляем ti
 
 const heroEl = document.querySelector('.hero'); // ищем элемент с кл. .hero
 heroEl.append(titleEl, imageEl); // вставляет сколь угодно элементов в написанном порядке за один раз
-// --------------------------------------------------------------------------
 
-heroEl.append(...imageEl); // если бы был массив элементов, можно было бы их распушить в родительский элемент в HTML
+// 06-collections  -----------------------------------------------------------------------------
+
+// Создание коллекций элементов: из backend приходит массив данных oldArray
+const containerInHtml = querySelector('ul'); // находим нужный контейнер
+
+// созаём ф-цию, которая вернёт результат map()-операций над oldArray
+const makeNewArrayEl = array => {
+  return array.map(i => {
+    // производим разные операции с элементами массива и map() возвращает новый массив с той же длинной
+
+    const buttonEl = document.createElement('button');
+    buttonEl.type = 'button';
+    buttonEl.classList.add('color-picker__option');
+    buttonEl.textContent = i.label;
+    buttonEl.style.backgroundColor = i.color;
+
+    return buttonEl;
+  });
+};
+
+const elements = makeNewArrayEl(oldArray); // вызываем ф-цию c аргументом и присваиваем её переменной в которой будет храниться её результат
+containerInHtml.append(...elements); // новый массив элементов распушиваем в найденый ранее контейнер containerInHtml в HTML
+
+// 07-product  -----------------------------------------------------------------------------
