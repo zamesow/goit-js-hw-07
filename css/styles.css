@@ -3,3 +3,14 @@
   display: flex;
   justify-content: space-around;
 }
+
+.js-register-form {
+  margin: 15px;
+}
+
+#counter {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  margin-left: 200px;
+}

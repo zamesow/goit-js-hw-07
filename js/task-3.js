@@ -20,10 +20,10 @@ const galleryEl = document.querySelector('#gallery');
 
 const createGallery = array => {
   galleryEl.classList.add('gallery');
-  const makeItem = ({ url, alt }) =>
+  const makeItemEl = ({ url, alt }) =>
     `<li><img src='${url}' alt='${alt}' width='240'></li>`;
 
-  const strings = images.map(makeItem).join(' ');
+  const strings = images.map(makeItemEl).join('');
   galleryEl.insertAdjacentHTML('beforeend', strings);
 };
 
