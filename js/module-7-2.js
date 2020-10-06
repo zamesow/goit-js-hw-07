@@ -1,4 +1,16 @@
 // 03-input-events (события полей вводов)
+// можно все ссылки вписать как значения свойств объекта
+const refs = {
+  input: document.querySelector('#name-input'),
+  name: document.querySelector('#name-output'),
+};
+
+// даный метод 'change' лучше не использовать на input, а только на check-box или radio-buttons. Функция возвращает результат только при потере фокуса в инпуте. Поэтому для input лучше использовать метод 'input'
+refs.input.addEventListener('change', onInputChange);
+function onInputChange(event) {
+  console.log(event);
+  console.log(event.currentTarget.value);
+}
 
 /*
 -
