@@ -12,8 +12,8 @@ function onFormCheckLength(event) {
       break;
 
     default:
-      form.classList.add('invalid');
       form.classList.replace('valid', 'invalid');
+      form.classList.add('invalid');
       break;
   }
 }
