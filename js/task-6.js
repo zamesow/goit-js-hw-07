@@ -4,7 +4,6 @@ const dataLength = Number(form.getAttribute('data-length'));
 form.addEventListener('blur', onFormCheckLength);
 
 function onFormCheckLength(event) {
-  form.classList.add('invalid');
   const valueLength = event.currentTarget.value.length;
 
   switch (valueLength) {
@@ -12,8 +11,9 @@ function onFormCheckLength(event) {
       form.classList.replace('invalid', 'valid');
       break;
 
-    case 0:
-      form.classList.remove('invalid');
+    default:
+      form.classList.add('invalid');
+      form.classList.replace('valid', 'invalid');
       break;
   }
 }
