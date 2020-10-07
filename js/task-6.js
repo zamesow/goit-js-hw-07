@@ -1,14 +1,19 @@
 const form = document.querySelector('#validation-input');
 const dataLength = Number(form.getAttribute('data-length'));
 
-form.classList.add('invalid');
-
 form.addEventListener('blur', onFormCheckLength);
 
 function onFormCheckLength(event) {
+  form.classList.add('invalid');
   const valueLength = event.currentTarget.value.length;
 
-  valueLength === dataLength
-    ? form.classList.replace('invalid', 'valid')
-    : form.classList.replace('valid', 'invalid');
+  switch (valueLength) {
+    case dataLength:
+      form.classList.replace('invalid', 'valid');
+      break;
+
+    case 0:
+      form.classList.remove('invalid');
+      break;
+  }
 }
