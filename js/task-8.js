@@ -47,6 +47,5 @@ function randomRgb() {
   return `rgb(${red},${green},${blue})`;
 }
 
-// слушатели кнопок
 renderBtn.addEventListener('click', onClickRenderBtn);
 destroyBtn.addEventListener('click', onClickDestroyBtn);
